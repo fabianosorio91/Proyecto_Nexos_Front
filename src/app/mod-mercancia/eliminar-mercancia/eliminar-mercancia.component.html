@@ -1,0 +1,69 @@
+<div class="container-fluid">
+    <div class="row mt-3">
+        <div class="col-4 ">
+            <h2 class="titulo2">Eliminar Mercancía</h2>
+            <form [formGroup]="nexosForm" (ngSubmit)="guardar"> 
+                <div>
+                    <label>Id Mercancía:</label>
+                    <input type="text" formControlName="nombreProducto" placeholder="Id Mercancía a Eliminar"
+                        class="form-control">
+                </div>
+                <div>
+                    <label>Id Empleado:</label>
+                    <input type="text" formControlName="nombreProducto" placeholder="Debe ser el mismo que la registro"
+                        class="form-control">
+                </div>
+                <hr>
+                <button type="submit" class="btn btn-success"  [disabled]="nexosForm.invalid">Eliminar</button> 
+                <hr>
+                <p><b>Nota:</b> Para Eliminar la mercancía, únicamente lo puede hacer la persona que lo registró.</p>        
+            </form>
+        </div>
+
+        <div class=" col-8 ">
+            <table class="table table-success table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nombre del Producto</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Fecha de Ingreso</th>
+                        <th scope="col">Id Empleado</th>
+                        <th scope="col">Id Empleado Modifica</th>
+                        <th scope="col">Fecha de Modificación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item ">
+                        <th scope="row">{{item.id}}</th>
+                        <td>{{item.nombreProducto}}</td>
+                        <td>{{item.cantidad}}</td>
+                        <td>{{item.fechaIngreso}}</td>
+                        <td>{{item.idEmpleado}}</td>
+                        <td>{{item.idEmpleadoModifica}}</td>
+                        <td>{{item.fechaModificacion}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                      <span class="sr-only">Anterior</span>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                      <span class="sr-only">Siguiente</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+        </div>
+    </div>
+</div>

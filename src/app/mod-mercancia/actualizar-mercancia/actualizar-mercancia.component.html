@@ -1,0 +1,87 @@
+<div class="container-fluid">
+    <div class="row mt-3">
+        <div class="col-4 ">
+            <h2 class="titulo2">Actualizar Mercancía</h2>
+            <form [formGroup]="nexosForm" (ngSubmit)="guardar">
+                <div>
+                    <label>Nombre Producto:</label>
+                    <input type="text" formControlName="nombreProducto" placeholder="Nombre del Producto"
+                        class="form-control">
+                </div>
+                <div>
+                    <label>Cantidad:</label>
+                    <input type="number" formControlName="cantidad" placeholder="Digite un número entero"
+                        class="form-control">
+
+                </div>
+                <div>
+                    <label>Fecha de Ingreso:</label>
+                    <input type="text" formControlName="fechaIngreso" placeholder="dd/mm/aaa" class="form-control">
+                </div>
+                <div>
+                    <label>Id Empleado:</label>
+                    <input type="number" formControlName="idEmpleado" placeholder="Id Empleado" class="form-control">
+                </div>
+                <div>
+                    <label>Id Empleado Modifica:</label>
+                    <input type="number" formControlName="idEmpleadoModifica" placeholder="Id Empleado Modifica"
+                        class="form-control">
+                </div>
+                <div>
+                    <label>Fecha de Modificación:</label>
+                    <input type="text" formControlName="fechaModificacion" placeholder="dd/mm/aaa" class="form-control">
+                </div>
+                <hr>
+                <button type="submit" class="btn btn-success" [disabled]="nexosForm.invalid">Actualizar</button>
+            </form>
+
+        </div>
+
+
+        <div class=" col-8 ">
+            <table class="table table-success table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nombre del Producto</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Fecha de Ingreso</th>
+                        <th scope="col">Id Empleado</th>
+                        <th scope="col">Id Empleado Modifica</th>
+                        <th scope="col">Fecha de Modificación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item ">
+                        <th scope="row">{{item.id}}</th>
+                        <td>{{item.nombreProducto}}</td>
+                        <td>{{item.cantidad}}</td>
+                        <td>{{item.fechaIngreso}}</td>
+                        <td>{{item.idEmpleado}}</td>
+                        <td>{{item.idEmpleadoModifica}}</td>
+                        <td>{{item.fechaModificacion}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                      <span class="sr-only">Anterior</span>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                      <span class="sr-only">Siguiente</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+        </div>
+    </div>
+</div>

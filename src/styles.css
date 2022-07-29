@@ -1,0 +1,56 @@
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root {
+    --main-radius: 20px;
+    --main-padding: 50px;
+}
+.container {
+    display:grid;    
+    grid-gap: 0.2rem;
+    font-weight: 700; 
+    text-transform:capitalize  ;
+    font-size: 15px;
+  
+}
+.form-control{
+
+    background-position: 0%;
+}
+
+img{
+    float:right;
+   }
+
+.refencias{
+    text-align: left;      
+    
+}
+
+.tituloinv {
+    color: rgb(17, 9, 26);
+    font-size: 30vw;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.titulo2 {
+    border-radius: 25px;
+    text-align: center;
+    padding: 10px;
+    width: 400px;
+    height: 60px;
+    color: #dfd7e9;
+    background-color: #134b0cb6;
+}
+
+.iniciomision{
+    background-color: rgba(228, 63, 13, 0.658);
+    font-family: Arial, sans-serif;
+}
+.iniciovision{
+    background-color: rgba(20, 171, 182, 0.658);
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.centrar{ padding: 10px; margin: 10px; float: initial;}
