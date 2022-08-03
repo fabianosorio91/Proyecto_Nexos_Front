@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 import { MercanciaService } from '../services/mercancia.services';
 
 @Component({
@@ -14,6 +15,36 @@ export class CrearMercanciaComponent implements OnInit {
   eliminarForm: FormGroup;
   mercancia: any;
   mercancia2: any;  
+
+  showModal(){
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Mercancía Creada',
+      showConfirmButton: false,
+      timer: 1500
+    })}
+
+    showModal1(){
+    Swal.fire({
+      title: 'Estas Seguro?',
+      text: "No podrás revertir esto!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, Eliminar!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Eliminado!',
+          'Su archivo ha sido borrado.',
+          'success'
+        )
+      }
+    })}
+    showModal2(){
+      Swal.fire('Puedes proceder a Editar')}
 
   constructor(private fb: FormBuilder, private mercanciaService: MercanciaService) { }
 
@@ -33,6 +64,7 @@ export class CrearMercanciaComponent implements OnInit {
       id: [' ', Validators.required]
     });
 
+  
     this.mercanciaService.mostrarMercancia().subscribe((resp: any) => {
       this.mercancia = resp;
     },
@@ -46,7 +78,7 @@ export class CrearMercanciaComponent implements OnInit {
     );
   }
 
-  guardar() {
+  crear() {
     let result = this.mercanciaService.CrearMercancia(this.crearForm.value).subscribe((resp: any) => {
       this.crearForm.reset();
       this.mercancia.push(resp);
@@ -70,10 +102,11 @@ export class CrearMercanciaComponent implements OnInit {
     });
   }
 
-  editar(id: number){
-    this.mercanciaService.ActualizarMercancia
+  editar(mercancia: any){
+    mercancia.actualizarMercancia= mercancia
 
     
   }
+  
 
 }

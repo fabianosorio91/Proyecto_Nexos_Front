@@ -20,6 +20,7 @@ import { EliminarMercanciaComponent } from './mod-mercancia/eliminar-mercancia/e
 import { ToastrModule } from 'ngx-toastr';
 import { MatButtonModule } from '@angular/material/button';
 
+
 @NgModule({
   declarations: [
     MenuComponent,
@@ -29,6 +30,7 @@ import { MatButtonModule } from '@angular/material/button';
     BuscarMercanciaComponent,
     ActualizarMercanciaComponent,
     EliminarMercanciaComponent,
+   
         
 
   ],
