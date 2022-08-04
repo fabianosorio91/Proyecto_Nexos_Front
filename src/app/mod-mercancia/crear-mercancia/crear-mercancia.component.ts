@@ -20,9 +20,13 @@ export class CrearMercanciaComponent implements OnInit {
     Swal.fire({
       position: 'top-end',
       icon: 'success',
-      title: 'Mercancía Creada',
-      showConfirmButton: false,
+      title: 'Guardado',
+      showConfirmButton: true,
       timer: 1500
+    }).then((result) => {
+      if(result.isConfirmed){
+        window.location.href="crearMercancia"
+      }
     })}
 
     showModal1(){
@@ -103,7 +107,8 @@ export class CrearMercanciaComponent implements OnInit {
   }
 
   editar(mercancia: any){
-    mercancia.actualizarMercancia= mercancia
+    this.mercancia = mercancia;
+  
 
     
   }

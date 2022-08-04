@@ -34,8 +34,9 @@
                     <label>Fecha de Modificación:</label>
                     <input type="date" formControlName="fechaModificacion" placeholder="dd/mm/aaa" class="form-control"[(ngModel)]="mercancia.fechaModificacion">
                 </div>
+                
 
-                <button type="submit" [disabled]="!crearForm.valid"(click)="showModal()" type="submit" class="btn btn-success">Crear</button>
+                <button type="submit" (click)="showModal()" type="submit" class="btn btn-success mt-2">Guardar</button>
                 
 
             </form>
@@ -74,7 +75,7 @@
                             <button (click)="showModal1()" class="bi bi-trash" (click)="eliminar(item)"></button>                          
                             <!-- <button  class="bi bi-trash" (click)="eliminar(item)"></button> -->
                             <!-- <button type= "button"(click)="editar (item)" class ="bi bi-pencil-square" ></button> -->
-                           <button (click)="showModal2()" class="bi bi-pencil-square" (click)="editar(item)"></button> 
+                           <button  class="bi bi-pencil-square" (click)="editar(item)"></button> 
 
                         </td>
                     </tr>
