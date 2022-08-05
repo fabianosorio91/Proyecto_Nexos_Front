@@ -12,11 +12,10 @@ export class AppComponent implements OnInit {
   buscarForm!: FormGroup;
   mercancia: any;
   mercanciaService: any;
-
+  empleadoService: any;
 
   constructor(
     public fb: FormBuilder,
-
   ) {
 
   }
@@ -30,7 +29,6 @@ export class AppComponent implements OnInit {
       idEmpleadoModifica: ['', Validators.required],
       fechaModificacion: ['', Validators.required]
     });;
-
   }
 
   Guardar(): void {

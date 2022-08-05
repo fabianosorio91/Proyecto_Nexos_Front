@@ -25,7 +25,7 @@ export class CrearMercanciaComponent implements OnInit {
       timer: 1500
     }).then((result) => {
       if(result.isConfirmed){
-        window.location.href="crearMercancia"
+        window.location.href="crearEmpleado"
       }
     })}
 

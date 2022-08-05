@@ -1,0 +1,90 @@
+    <div class="container-fluid">
+        <div class="row mt-3">
+            <div class="col-4 ">
+                <h2 class="titulo2">Crear Empleado</h2>
+                <form [formGroup]="crearEForm" (ngSubmit)="crear()">
+    
+                    <input type="hidden" formControlName="id" [(ngModel)]="empleado.id">
+    
+                    <div>
+                        <label>Nombre:</label>
+                        <input type="text" formControlName="nombre" placeholder="Nombre del Empleado"
+                            class="form-control" [(ngModel)]="empleado.Nombre">
+                    </div>
+                    <div>
+                        <label>Edad:</label>
+                        <input type="number" formControlName="edad" placeholder="Edad"
+                            class="form-control"[(ngModel)]="empleado.Edad">
+                    </div>
+                    <div>
+                        <label>Id Cargo:</label>
+                        <input type="text" formControlName="idCargo" placeholder="Id Cargo" 
+                        class="form-control"[(ngModel)]="empleado.idEmpleado">
+                    </div>
+                    <div>
+                        <label>Fecha De Ingreso:</label>
+                        <input type="date" formControlName="fechaIngreso" placeholder="dd/mm/aaaa" 
+                        class="form-control"[(ngModel)]="empleado.idEmpleado">
+                    </div>                                      
+    
+                    <button type="submit" (click)="showModal()" type="submit" 
+                    class="btn btn-success mt-2">Guardar</button>
+                    
+    
+                </form>
+            </div>
+    
+            <div class=" col-8 ">
+                <div class="text-end mb-2">
+                    <form [formGroup]="buscarEForm" (ngSubmit)="buscar() " >
+                        <input type="search" placeholder="buscar" formControlName="id">
+                        <button type="submit">Buscar</button>
+                    </form>
+                </div>
+                <table class="table table-success table-striped">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Edad</th>
+                            <th>Id Cargo</th>
+                            <th>Fecha Ingreso</th>                            
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of empleado ">
+                            <th>{{item.Id}}</th>
+                            <td>{{item.nombre}}</td>
+                            <td>{{item.edad}}</td>
+                            <td>{{item.idCargo}}</td>
+                            <td>{{item.fechaIngreso}}</td>                            
+                            <td>  
+                                <button (click)="showModal1()" class="bi bi-trash" (click)="eliminar()"></button>                          
+                                <button  class="bi bi-pencil-square" (click)="editar()"></button>     
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Anterior</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Siguiente</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>

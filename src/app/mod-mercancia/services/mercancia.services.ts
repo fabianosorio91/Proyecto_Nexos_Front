@@ -5,6 +5,7 @@ import { Observable } from "rxjs";
 @Injectable({
     providedIn: 'root'
 })
+
 export class MercanciaService {
 
     actualizarMercancia(value: any) {
@@ -15,13 +16,16 @@ export class MercanciaService {
     private API_BUSCARXID = 'http://localhost:2021/Mercancia/mostrarPorId/';
     private API_ELIMINAR = 'http://localhost:2021/Mercancia/Delete/';
     private API_EDITAR = 'http://localhost:2021/Mercancia/Actualizar/';
+    private API_CREARE = 'http://localhost:2021/Empleado/CrearEmpleado';
+    private API_MOSTRARE = 'http://localhost:2021/Empleado/mostrarEmpleado';
+
 
     constructor(private httpClient: HttpClient) { }
- 
+
     public CrearMercancia(mercancia: any): Observable<any> {
         return this.httpClient.post(this.API_CREAR, mercancia);
     }
-  
+
     public mostrarMercancia(): Observable<any> {
         return this.httpClient.get(this.API_MOSTRAR);
     }
@@ -30,11 +34,12 @@ export class MercanciaService {
         return this.httpClient.get(this.API_BUSCARXID + id);
     }
 
-    public borrarMercancia(id: number, idEmpleado: number) {      
+    public borrarMercancia(id: number, idEmpleado: number) {
         return this.httpClient.delete(this.API_ELIMINAR + id + "/" + idEmpleado);
     }
 
-    public ActualizarMercancia(id: number){
-        
+    public ActualizarMercancia(id: number) {
+
     }
+ 
 }
