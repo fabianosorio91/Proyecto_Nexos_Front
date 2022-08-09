@@ -58,8 +58,8 @@ export class CrearEmpleadoComponent implements OnInit {
   ngOnInit(): void {
 
     this.crearEForm = this.fb.group({
-      id: [' ', Validators.required],
-      nombre: ['', Validators.required],
+      id: ['', Validators.required],
+      empleado: ['', Validators.required],
       edad: ['', Validators.required],
       idCargo: ['', Validators.required],
       fechaIngreso: ['', Validators.required],
@@ -86,7 +86,14 @@ export class CrearEmpleadoComponent implements OnInit {
     )
   }
 
-  eliminar() { }
+  eliminarE(empleadoRecibido: any) {
+    console.log(empleadoRecibido);
+    this.EmpleadoService.borrarEmpleado(empleadoRecibido.id).subscribe((resp2: any) => {
+      this.EmpleadoService.mostrarEmpleado().subscribe((resp: any) => {
+        this.empleado = resp;
+      });
+    })
+  }
 
   buscar() { }
 

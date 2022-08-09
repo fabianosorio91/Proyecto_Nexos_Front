@@ -8,8 +8,8 @@
                          
                     <div>
                         <label>Nombre Empleado:</label>
-                        <input type="text" formControlName="nombre" placeholder="Nombre del Empleado"
-                            class="form-control" [(ngModel)]="empleado.nombre">
+                        <input type="text" formControlName="empleado" placeholder="Nombre del Empleado"
+                            class="form-control" [(ngModel)]="empleado.empleado">
                     </div>
                     <div>
                         <label>Edad:</label>
@@ -54,37 +54,19 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let item of empleado ">
-                            <th>{{item.Id}}</th>
-                            <td>{{item.nombre}}</td>
+                            <th>{{item.id}}</th>
+                            <td>{{item.empleado}}</td>
                             <td>{{item.edad}}</td>
                             <td>{{item.idCargo}}</td>
                             <td>{{item.fechaIngreso}}</td>                            
                             <td>  
-                                <button (click)="showModal1()" class="bi bi-trash" (click)="eliminar()"></button>                          
+                                <button (click)="showModal1()" class="bi bi-trash" (click)="eliminarE(item)"></button>                          
                                 <button  class="bi bi-pencil-square" (click)="editar()"></button>     
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                                <span class="sr-only">Anterior</span>
-                            </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                <span class="sr-only">Siguiente</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+            
             </div>
         </div>
     </div>
