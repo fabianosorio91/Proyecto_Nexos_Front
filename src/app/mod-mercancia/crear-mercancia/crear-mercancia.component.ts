@@ -14,9 +14,9 @@ export class CrearMercanciaComponent implements OnInit {
   buscarForm: FormGroup;
   eliminarForm: FormGroup;
   mercancia: any;
-  mercancia2: any;  
+  mercancia2: any;
 
-  showModal(){
+  showModal() {
     Swal.fire({
       position: 'top-end',
       icon: 'success',
@@ -24,12 +24,13 @@ export class CrearMercanciaComponent implements OnInit {
       showConfirmButton: true,
       timer: 1500
     }).then((result) => {
-      if(result.isConfirmed){
-        window.location.href="crearEmpleado"
+      if (result.isConfirmed) {
+        window.location.href = "crearMercancia"
       }
-    })}
+    })
+  }
 
-    showModal1(){
+  showModal1() {
     Swal.fire({
       title: 'Estas Seguro?',
       text: "No podrás revertir esto!",
@@ -46,11 +47,15 @@ export class CrearMercanciaComponent implements OnInit {
           'success'
         )
       }
-    })}
-    showModal2(){
-      Swal.fire('Puedes proceder a Editar')}
+    })
+  }
 
-  constructor(private fb: FormBuilder, private mercanciaService: MercanciaService) { }
+  showModal2() {
+    Swal.fire('Puedes proceder a Editar')
+  }
+
+  constructor(private fb: FormBuilder,
+    private mercanciaService: MercanciaService) { }
 
   ngOnInit(): void {
 
@@ -62,13 +67,12 @@ export class CrearMercanciaComponent implements OnInit {
       idEmpleado: ['', Validators.required],
       idEmpleadoModifica: ['', Validators.required],
       fechaModificacion: ['', Validators.required]
-
     });
+
     this.buscarForm = this.fb.group({
       id: [' ', Validators.required]
     });
 
-  
     this.mercanciaService.mostrarMercancia().subscribe((resp: any) => {
       this.mercancia = resp;
     },
@@ -90,6 +94,7 @@ export class CrearMercanciaComponent implements OnInit {
       (error: any) => { console.error(error) }
     )
   }
+
   eliminar(mercanciaRecibida: any) {
     console.log(mercanciaRecibida);
     this.mercanciaService.borrarMercancia(mercanciaRecibida.id, mercanciaRecibida.idEmpleado).subscribe((resp2: any) => {
@@ -106,12 +111,12 @@ export class CrearMercanciaComponent implements OnInit {
     });
   }
 
-  editar(mercancia: any){
+  editar(mercancia: any) {
     this.mercancia = mercancia;
-  
 
-    
+
+
   }
-  
+
 
 }

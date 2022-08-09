@@ -15,11 +15,8 @@ export class MercanciaService {
     private API_MOSTRAR = 'http://localhost:2021/Mercancia/todaMercancia/';
     private API_BUSCARXID = 'http://localhost:2021/Mercancia/mostrarPorId/';
     private API_ELIMINAR = 'http://localhost:2021/Mercancia/Delete/';
-    private API_EDITAR = 'http://localhost:2021/Mercancia/Actualizar/';
-    private API_CREARE = 'http://localhost:2021/Empleado/CrearEmpleado';
-    private API_MOSTRARE = 'http://localhost:2021/Empleado/mostrarEmpleado';
-
-
+    //private API_EDITAR = 'http://localhost:2021/Mercancia/Actualizar/';
+    
     constructor(private httpClient: HttpClient) { }
 
     public CrearMercancia(mercancia: any): Observable<any> {

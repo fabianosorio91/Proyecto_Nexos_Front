@@ -36,7 +36,8 @@
                 </div>
                 
 
-                <button type="submit" (click)="showModal()" type="submit" class="btn btn-success mt-2">Guardar</button>
+                <button type="submit" (click)="showModal()" type="submit" 
+                class="btn btn-success mt-2">Guardar</button>
                 
 
             </form>
@@ -73,9 +74,7 @@
                         <td>{{item.fechaModificacion}}</td>
                         <td>  
                             <button (click)="showModal1()" class="bi bi-trash" (click)="eliminar(item)"></button>                          
-                            <!-- <button  class="bi bi-trash" (click)="eliminar(item)"></button> -->
-                            <!-- <button type= "button"(click)="editar (item)" class ="bi bi-pencil-square" ></button> -->
-                           <button  class="bi bi-pencil-square" (click)="editar(item)"></button> 
+                            <button  class="bi bi-pencil-square" (click)="editar(item)"></button> 
 
                         </td>
                     </tr>

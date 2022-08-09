@@ -12,8 +12,6 @@ export class EmpleadoService {
     private API_CREARE = 'http://localhost:2021/Empleado/CrearEmpleado';
     private API_MOSTRARE = 'http://localhost:2021/Empleado/mostrarEmpleado';
 
-
-
 constructor(private httpClient: HttpClient) { }
 
 public CrearEmpleado(empleado: any): Observable<any> {
@@ -23,5 +21,6 @@ public CrearEmpleado(empleado: any): Observable<any> {
 public mostrarEmpleado(): Observable<any> {
     return this.httpClient.get(this.API_MOSTRARE);
 }
+
 
 }

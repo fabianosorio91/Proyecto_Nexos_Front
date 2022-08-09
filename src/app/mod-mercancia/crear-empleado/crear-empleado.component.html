@@ -2,29 +2,29 @@
         <div class="row mt-3">
             <div class="col-4 ">
                 <h2 class="titulo2">Crear Empleado</h2>
-                <form [formGroup]="crearEForm" (ngSubmit)="crear()">
-    
+                <form [formGroup]="crearEForm" (ngSubmit)="crearE()">
+
                     <input type="hidden" formControlName="id" [(ngModel)]="empleado.id">
-    
+                         
                     <div>
-                        <label>Nombre:</label>
+                        <label>Nombre Empleado:</label>
                         <input type="text" formControlName="nombre" placeholder="Nombre del Empleado"
-                            class="form-control" [(ngModel)]="empleado.Nombre">
+                            class="form-control" [(ngModel)]="empleado.nombre">
                     </div>
                     <div>
                         <label>Edad:</label>
                         <input type="number" formControlName="edad" placeholder="Edad"
-                            class="form-control"[(ngModel)]="empleado.Edad">
+                            class="form-control"[(ngModel)]="empleado.edad">
                     </div>
                     <div>
                         <label>Id Cargo:</label>
                         <input type="text" formControlName="idCargo" placeholder="Id Cargo" 
-                        class="form-control"[(ngModel)]="empleado.idEmpleado">
+                        class="form-control"[(ngModel)]="empleado.idCargo">
                     </div>
                     <div>
                         <label>Fecha De Ingreso:</label>
                         <input type="date" formControlName="fechaIngreso" placeholder="dd/mm/aaaa" 
-                        class="form-control"[(ngModel)]="empleado.idEmpleado">
+                        class="form-control"[(ngModel)]="empleado.fechaIngreso">
                     </div>                                      
     
                     <button type="submit" (click)="showModal()" type="submit" 
