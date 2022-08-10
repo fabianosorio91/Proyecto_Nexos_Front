@@ -95,8 +95,13 @@ export class CrearEmpleadoComponent implements OnInit {
     })
   }
 
+  editarE(empleado: any) {
+    this.empleado = empleado;
+
+  }
+
   buscar() { }
 
-  editar() { }
+
 
 }

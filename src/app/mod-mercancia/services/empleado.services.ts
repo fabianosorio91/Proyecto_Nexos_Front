@@ -12,6 +12,7 @@ export class EmpleadoService {
     private API_CREARE = 'http://localhost:2021/Empleado/CrearEmpleado';
     private API_MOSTRARE = 'http://localhost:2021/Empleado/MostarEmpleados';
     private API_ELIMINARE = 'http://localhost:2021/Empleado/BorrarEmpleado/';
+    //private API_ACTUALIZARE = 'http://localhost:2021/Empleado/ActualizarE/';
 
 
 constructor(private httpClient: HttpClient) { }
@@ -28,4 +29,7 @@ public borrarEmpleado(id: number) {
     return this.httpClient.delete(this.API_ELIMINARE + id);
 }
 
+public ActualizarEmpleado(id: number) {
+
+}
 }

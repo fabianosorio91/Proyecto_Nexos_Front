@@ -114,8 +114,6 @@ export class CrearMercanciaComponent implements OnInit {
   editar(mercancia: any) {
     this.mercancia = mercancia;
 
-
-
   }
 
 
