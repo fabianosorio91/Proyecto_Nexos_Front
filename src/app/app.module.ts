@@ -18,6 +18,7 @@ import { EliminarMercanciaComponent } from './mod-mercancia/eliminar-mercancia/e
 import { ToastrModule } from 'ngx-toastr';
 import { MatButtonModule } from '@angular/material/button';
 import { CrearEmpleadoComponent } from './mod-mercancia/crear-empleado/crear-empleado.component';
+import { CargoComponent } from './mod-mercancia/cargo/cargo.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { CrearEmpleadoComponent } from './mod-mercancia/crear-empleado/crear-emp
     BuscarMercanciaComponent,
     ActualizarMercanciaComponent,
     EliminarMercanciaComponent,
-    CrearEmpleadoComponent          
+    CrearEmpleadoComponent,
+    CargoComponent,         
 
   ],
 

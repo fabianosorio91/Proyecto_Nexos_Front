@@ -1,0 +1,51 @@
+<div class="container-fluid">
+    <div class="row mt-3">
+        <div class="col-4 ">
+            <h2 class="titulo2">Crear Cargo</h2>
+            <form [formGroup]="crearCForm" (ngSubmit)="crearC()">
+
+                <input type="hidden" formControlName="id" [(ngModel)]="cargo.id">
+                     
+                <div>
+                    <label>Nombre Cargo:</label>
+                    <input type="text" formControlName="nombreCargo" placeholder="Cargo"
+                        class="form-control" [(ngModel)]="cargo.nombreCargo">
+                </div>
+               
+                <button type="submit" (click)="showModal()" type="submit" 
+                class="btn btn-success mt-2">Guardar</button>
+                
+
+            </form>
+        </div>
+
+        <div class=" col-8 ">
+            <div class="text-end mb-2">
+                <form [formGroup]="buscarCForm" (ngSubmit)="buscarC() " >
+                    <input type="search" placeholder="buscar" formControlName="id">
+                    <button type="submit">Buscar</button>
+                </form>
+            </div>
+            <table class="table table-success table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Cargo</th>                                              
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of cargo ">
+                        <th>{{item.id}}</th>
+                        <td>{{item.nombreCargo}}</td>
+                                               
+                        <td>  
+                            <button (click)="showModal1()" class="bi bi-trash" (click)="eliminarC()"></button>                          
+                            <button  class="bi bi-pencil-square" (click)="editarC()"></button>     
+                        </td>
+                    </tr>
+                </tbody>
+            </table>        
+        </div>
+    </div>
+</div>

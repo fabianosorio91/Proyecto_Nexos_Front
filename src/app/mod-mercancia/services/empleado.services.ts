@@ -11,8 +11,7 @@ export class EmpleadoService {
      
     private API_CREARE = 'http://localhost:2021/Empleado/CrearEmpleado';
     private API_MOSTRARE = 'http://localhost:2021/Empleado/MostarEmpleados';
-    private API_ELIMINARE = 'http://localhost:2021/Empleado/BorrarEmpleado/';
-    //private API_ACTUALIZARE = 'http://localhost:2021/Empleado/ActualizarE/';
+    private API_ELIMINARE = 'http://localhost:2021/Empleado/BorrarEmpleado/';   
 
 
 constructor(private httpClient: HttpClient) { }
