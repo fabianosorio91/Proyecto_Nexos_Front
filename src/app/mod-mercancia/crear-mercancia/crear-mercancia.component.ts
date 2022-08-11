@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { MercanciaService } from '../services/mercancia.services';
-import { DataTablesModule } from "angular-datatables";
+
 
 
 @Component({
@@ -21,6 +21,20 @@ export class CrearMercanciaComponent implements OnInit {
   mercancia2: any;
 
   showModal() {
+    let fechaIngreso = this.crearForm.value.fechaIngreso;
+    let date = new Date();
+    let output = String(date.getDate()).padStart(2, '0') + '/' + String(date.getMonth() + 1).padStart(2, '0') + '/' + date.getFullYear();
+   
+    if (Date.parse(fechaIngreso) > Date.parse(output)){
+      Swal.fire({
+        position: 'top-end',
+        icon: 'warning',
+        title: 'La fecha no debe ser superior a la actual',
+        showConfirmButton: true,
+        timer: 1500})
+
+    }else{
+      this.crear(this.crearForm.value);
     Swal.fire({
       position: 'top-end',
       icon: 'success',
@@ -28,13 +42,14 @@ export class CrearMercanciaComponent implements OnInit {
       showConfirmButton: true,
       timer: 1500
     }).then((result) => {
+
       if (result.isConfirmed) {
         window.location.href = "crearMercancia"
       }
     })
-  }
+  }}
 
-  showModal1() {
+  showModal1(Mercancia: any) {
     Swal.fire({
       title: 'Estas Seguro?',
       text: "No podrás revertir esto!",
@@ -44,7 +59,9 @@ export class CrearMercanciaComponent implements OnInit {
       cancelButtonColor: '#d33',
       confirmButtonText: 'Si, Eliminar!'
     }).then((result) => {
-      if (result.isConfirmed) {
+      if (result.isConfirmed)
+        this.eliminar(Mercancia);
+      {
         Swal.fire(
           'Eliminado!',
           'Su archivo ha sido borrado.',
@@ -65,8 +82,9 @@ export class CrearMercanciaComponent implements OnInit {
 
     this.dtOptions = {
       language: {
-      url: "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
-                 }}
+        url: "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
+      }
+    }
     this.crearForm = this.fb.group({
       id: [' ', Validators.required],
       nombreProducto: ['', Validators.required],
@@ -94,8 +112,8 @@ export class CrearMercanciaComponent implements OnInit {
     );
   }
 
-  crear() {
-    let result = this.mercanciaService.CrearMercancia(this.crearForm.value).subscribe((resp: any) => {
+  crear(Mercancia:any) {  
+    let result = this.mercanciaService.CrearMercancia(Mercancia).subscribe((resp: any) => {
       this.crearForm.reset();
       this.mercancia.push(resp);
     },

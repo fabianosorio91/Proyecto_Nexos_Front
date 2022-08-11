@@ -23,17 +23,17 @@
             <div class="text-end mb-2">
                
             </div>
-            <table datatable class="table table-success table-striped" [dtOptions]="dtOptions">
+            <table datatable class="table table-striped table-hover" [dtOptions]="dtOptions">
                 <thead>
                     <tr>
-                        <th>Id</th>
+                      <!-- <th>Id</th> -->
                         <th>Cargo</th>                                              
                       
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let item of cargo ">
-                        <th>{{item.id}}</th>
+                        <!-- <th>{{item.id}}</th> -->
                         <td>{{item.nombreCargo}}</td>
                                                
                         <!-- <td>  

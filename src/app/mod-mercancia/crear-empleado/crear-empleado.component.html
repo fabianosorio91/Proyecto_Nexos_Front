@@ -36,10 +36,10 @@
     
             <div class=" col-8 ">
                 
-                <table datatable class="table table-success table-striped" [dtOptions]="dtOptions">
+                <table datatable class="table table-striped table-hover" [dtOptions]="dtOptions">
                     <thead>
                         <tr>
-                            <th>Id</th>
+                            <!-- <th>Id</th> -->
                             <th>Nombre</th>
                             <th>Edad</th>
                             <th>Id Cargo</th>
@@ -49,14 +49,14 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let item of empleado ">
-                            <th>{{item.id}}</th>
+                            <!-- <th>{{item.id}}</th> -->
                             <td>{{item.empleado}}</td>
                             <td>{{item.edad}}</td>
                             <td>{{item.idCargo}}</td>
                             <td>{{item.fechaIngreso}}</td>                            
                             <td>  
-                                <button (click)="showModal1()" class="bi bi-trash" (click)="eliminarE(item)"></button>                          
-                                <button  class="bi bi-pencil-square" (click)="editarE(item)"></button>     
+                                <a (click)="showModal1(item)" class="bi bi-trash btn btn-danger  " style="margin-right: 5px;"></a>                          
+                                <a  class="bi bi-pencil-square btn btn-success " (click)="editarE(item)"></a>     
                             </td>
                         </tr>
                     </tbody>

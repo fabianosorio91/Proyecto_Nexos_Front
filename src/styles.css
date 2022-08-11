@@ -37,20 +37,25 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     padding: 10px;
     width: 400px;
     height: 60px;
-    color: #dfd7e9;
-    background-color: #134b0cb6;
+        background-color: #0c394b28;
 }
 
 .iniciomision{
-    background-color: rgba(228, 63, 13, 0.658);
+    background-color: rgba(228, 63, 13, 0.377);
     border-radius: 10px;
     text-align: center; 
     font-family: Arial, sans-serif;
 }
 .iniciovision{
-    background-color: rgba(20, 171, 182, 0.658);
+    background-color: rgba(20, 171, 182, 0.356);
     font-family: Arial, sans-serif;
     text-align: center;
     border-radius: 10px;
+   
 }
 .centrar{ padding: 10px; margin: 10px; float: initial;}
+
+#DataTables_Table_2_filter{
+    margin-bottom: 10px !important;
+    
+}

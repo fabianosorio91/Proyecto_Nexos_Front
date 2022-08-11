@@ -29,7 +29,7 @@ export class CrearEmpleadoComponent implements OnInit {
     })
   }
 
-  showModal1() {
+  showModal1(Empleado: any) {
     Swal.fire({
       title: 'Estas Seguro?',
       text: "No podrás revertir esto!",
@@ -40,6 +40,7 @@ export class CrearEmpleadoComponent implements OnInit {
       confirmButtonText: 'Si, Eliminar!'
     }).then((result) => {
       if (result.isConfirmed) {
+        this.eliminarE(Empleado);
         Swal.fire(
           'Eliminado!',
           'Su archivo ha sido borrado.',
