@@ -6,6 +6,7 @@ import { CrearMercanciaComponent } from './crear-mercancia/crear-mercancia.compo
 import { CrearEmpleadoComponent } from './crear-empleado/crear-empleado.component';
 import { CargoComponent } from './cargo/cargo.component';
 
+
 const routes: Routes = [
   {path: '', redirectTo:'/inicio', pathMatch: 'full'},
   {path: 'inicio', component: InicioComponent},   
@@ -18,6 +19,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+
 })
 export class ModMercanciaRoutingModule { }

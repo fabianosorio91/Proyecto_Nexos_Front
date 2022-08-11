@@ -9,6 +9,7 @@ import { CargoService } from '../services/cargo.services';
   styleUrls: ['./cargo.component.css']
 })
 export class CargoComponent implements OnInit {
+  dtOptions: DataTables.Settings = {};
 
   crearCForm: FormGroup;
   buscarCForm: FormGroup;
@@ -29,6 +30,7 @@ export class CargoComponent implements OnInit {
   }
 
   showModal1() {
+    
     Swal.fire({
       title: 'Estas Seguro?',
       text: "No podrás revertir esto!",
@@ -48,12 +50,15 @@ export class CargoComponent implements OnInit {
     })
   }
 
-
-
   constructor(private fb: FormBuilder,
     private CargoService: CargoService) { }
 
   ngOnInit(): void {
+
+    this.dtOptions = {
+      language: {
+      url: "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
+                 }}
 
     this.crearCForm = this.fb.group({
       id: ['', Validators.required],
@@ -64,7 +69,12 @@ export class CargoComponent implements OnInit {
     this.buscarCForm = this.fb.group({
       id: [' ', Validators.required]
     });
- 
+
+    this.CargoService.mostrarCargo().subscribe((resp: any) => {
+      this.cargo = resp;
+    },
+      (error: any) => { console.error(error) }
+    );
   }
 
   crearC() {

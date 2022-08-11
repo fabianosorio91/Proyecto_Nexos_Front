@@ -10,7 +10,7 @@ export class CargoService {
 
      
     private API_CREARC = 'http://localhost:2021/Cargo/CrearCargo';
-    //private API_MOSTRARC = 'http://localhost:2021/Empleado/MostarEmpleados';
+    private API_MOSTRARC = 'http://localhost:2021/Cargo/MostarCargos';
     
 
 
@@ -20,9 +20,9 @@ public crearCargo(cargo: any): Observable<any> {
     return this.httpClient.post(this.API_CREARC, cargo);
 
 }
-// public mostrarCargo(): Observable<any> {
-//     return this.httpClient.get(this.API_MOSTRARC);
-// }
+ public mostrarCargo(): Observable<any> {
+     return this.httpClient.get(this.API_MOSTRARC);
+ }
 
 public borrarEmpleado() {}
 

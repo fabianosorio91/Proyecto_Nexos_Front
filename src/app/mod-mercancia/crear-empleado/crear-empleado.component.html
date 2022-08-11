@@ -35,13 +35,8 @@
             </div>
     
             <div class=" col-8 ">
-                <div class="text-end mb-2">
-                    <form [formGroup]="buscarEForm" (ngSubmit)="buscar() " >
-                        <input type="search" placeholder="buscar" formControlName="id">
-                        <button type="submit">Buscar</button>
-                    </form>
-                </div>
-                <table class="table table-success table-striped">
+                
+                <table datatable class="table table-success table-striped" [dtOptions]="dtOptions">
                     <thead>
                         <tr>
                             <th>Id</th>

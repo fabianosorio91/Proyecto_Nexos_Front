@@ -5,10 +5,12 @@ import { CrearMercanciaComponent } from './crear-mercancia/crear-mercancia.compo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { DataTablesModule } from "angular-datatables";
 
 @NgModule({
   declarations: [
     CrearMercanciaComponent,  
+    
     //CrearEmpleadoComponent,   
 
   ],
@@ -18,7 +20,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    DataTablesModule
 
   ], exports: [
     CommonModule,

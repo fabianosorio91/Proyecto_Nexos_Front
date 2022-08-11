@@ -10,6 +10,7 @@ import { EmpleadoService } from '../services/empleado.services';
 
 })
 export class CrearEmpleadoComponent implements OnInit {
+  dtOptions: DataTables.Settings = {};
   crearEForm: FormGroup;
   buscarEForm: FormGroup;
   empleado: any;
@@ -56,6 +57,10 @@ export class CrearEmpleadoComponent implements OnInit {
     private EmpleadoService: EmpleadoService) { }
 
   ngOnInit(): void {
+    this.dtOptions = {
+      language: {
+      url: "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
+                 }}
 
     this.crearEForm = this.fb.group({
       id: ['', Validators.required],
@@ -63,6 +68,9 @@ export class CrearEmpleadoComponent implements OnInit {
       edad: ['', Validators.required],
       idCargo: ['', Validators.required],
       fechaIngreso: ['', Validators.required],
+
+      function() { $('#table_id').DataTable(); }
+
     });
 
     this.buscarEForm = this.fb.group({

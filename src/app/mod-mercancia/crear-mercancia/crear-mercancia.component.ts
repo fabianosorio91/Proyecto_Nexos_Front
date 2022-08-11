@@ -1,7 +1,10 @@
+import { NgModule } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { MercanciaService } from '../services/mercancia.services';
+import { DataTablesModule } from "angular-datatables";
+
 
 @Component({
   selector: 'app-crear-mercancia',
@@ -10,6 +13,7 @@ import { MercanciaService } from '../services/mercancia.services';
 
 })
 export class CrearMercanciaComponent implements OnInit {
+  dtOptions: DataTables.Settings = {};
   crearForm: FormGroup;
   buscarForm: FormGroup;
   eliminarForm: FormGroup;
@@ -59,6 +63,10 @@ export class CrearMercanciaComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.dtOptions = {
+      language: {
+      url: "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
+                 }}
     this.crearForm = this.fb.group({
       id: [' ', Validators.required],
       nombreProducto: ['', Validators.required],
