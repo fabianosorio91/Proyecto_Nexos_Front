@@ -19,6 +19,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { MatButtonModule } from '@angular/material/button';
 import { CrearEmpleadoComponent } from './mod-mercancia/crear-empleado/crear-empleado.component';
 import { CargoComponent } from './mod-mercancia/cargo/cargo.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { CargoComponent } from './mod-mercancia/cargo/cargo.component';
     ActualizarMercanciaComponent,
     EliminarMercanciaComponent,
     CrearEmpleadoComponent,
-    CargoComponent,         
+    CargoComponent,
+    FooterComponent,         
 
   ],
 

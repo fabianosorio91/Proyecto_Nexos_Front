@@ -16,10 +16,11 @@ export class MercanciaService {
     private API_BUSCARXID = 'http://localhost:2021/Mercancia/mostrarPorId/';
     private API_ELIMINAR = 'http://localhost:2021/Mercancia/Delete/';
 
-    
+
     constructor(private httpClient: HttpClient) { }
 
     public CrearMercancia(mercancia: any): Observable<any> {
+
         return this.httpClient.post(this.API_CREAR, mercancia);
     }
 
@@ -38,5 +39,5 @@ export class MercanciaService {
     public ActualizarMercancia(id: number) {
 
     }
- 
+
 }

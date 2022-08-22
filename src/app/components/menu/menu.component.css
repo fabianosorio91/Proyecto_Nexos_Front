@@ -1,8 +1,21 @@
+.nav-link{
+    color: white !important;
+    
+ 
+}
+.nav-barra{
+    background-color: #00659e !important;
+    padding: 0%;
+}
+
 .active-link{
-    background-color: rgb(255, 245, 240);
-
+    border-bottom: 3px solid #ff5a19;
 }
 
-.active-link a {
-    color: chartreuse;
+.nav-link:hover {
+    border-bottom: 3px solid #ff5a19;
+    
+ 
 }
+
+

@@ -34,23 +34,26 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .titulo2 {
     border-radius: 25px;
     text-align: center;
-    padding: 10px;
-    width: 400px;
-    height: 60px;
-        background-color: #0c394b28;
+    padding: 10px; 
+    background-color: #ff5a19;
+    color: white;
 }
 
 .iniciomision{
-    background-color: rgba(228, 63, 13, 0.377);
+    background-color: #ff5a19;
     border-radius: 10px;
     text-align: center; 
     font-family: Arial, sans-serif;
+    padding: 20px;
+    color: white;
 }
 .iniciovision{
-    background-color: rgba(20, 171, 182, 0.356);
+    background-color:#015b8e;
     font-family: Arial, sans-serif;
     text-align: center;
     border-radius: 10px;
+    padding: 20px;
+    color: white;
    
 }
 .centrar{ padding: 10px; margin: 10px; float: initial;}
@@ -59,3 +62,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     margin-bottom: 10px !important;
     
 }
+body{
+    margin-bottom: 100px;
+}
+

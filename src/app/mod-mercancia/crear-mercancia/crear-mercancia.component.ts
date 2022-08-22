@@ -21,33 +21,44 @@ export class CrearMercanciaComponent implements OnInit {
   mercancia2: any;
 
   showModal() {
+
     let fechaIngreso = this.crearForm.value.fechaIngreso;
     let date = new Date();
     let output = String(date.getDate()).padStart(2, '0') + '/' + String(date.getMonth() + 1).padStart(2, '0') + '/' + date.getFullYear();
-   
-    if (Date.parse(fechaIngreso) > Date.parse(output)){
+
+    if (Date.parse(fechaIngreso) > Date.parse(output)) {
       Swal.fire({
         position: 'top-end',
         icon: 'warning',
         title: 'La fecha no debe ser superior a la actual',
         showConfirmButton: true,
-        timer: 1500})
+        timer: 1500
+      })
 
-    }else{
-      this.crear(this.crearForm.value);
-    Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Guardado',
-      showConfirmButton: true,
-      timer: 1500
-    }).then((result) => {
-
-      if (result.isConfirmed) {
-        window.location.href = "crearMercancia"
-      }
-    })
-  }}
+    } else {
+      let result = this.crear(this.crearForm.value); 
+      console.log(result);
+      if (result){
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Guardado',
+          showConfirmButton: true,
+          timer: 1500
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = "crearMercancia"
+          }
+        })}
+        else
+        {
+          Swal.fire({
+            position: 'top-end',
+            icon: 'warning',
+            title: 'Nombre ya Existe'})
+        }
+    }
+  }
 
   showModal1(Mercancia: any) {
     Swal.fire({
@@ -112,13 +123,21 @@ export class CrearMercanciaComponent implements OnInit {
     );
   }
 
-  crear(Mercancia:any) {  
+  crear(Mercancia: any): Boolean {
     let result = this.mercanciaService.CrearMercancia(Mercancia).subscribe((resp: any) => {
       this.crearForm.reset();
       this.mercancia.push(resp);
     },
-      (error: any) => { console.error(error) }
+      (error: any) => {
+       if(error.status == 201){
+        
+        return true;       
+       }      
+       return false;      
+      }
     )
+    return true;
+
   }
 
   eliminar(mercanciaRecibida: any) {

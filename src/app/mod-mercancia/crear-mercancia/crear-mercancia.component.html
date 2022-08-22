@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row mt-3">
-        <div class="col-4 ">
-            <h2 class="titulo2">Crear Mercancía</h2>
+        <div class="col-4" style="padding:10px">
+            <h3 class="titulo2">Crear Mercancía</h3>
             <form [formGroup]="crearForm" (ngSubmit)="showModal()">
 
                 <input type="hidden" formControlName="id" [(ngModel)]="mercancia.id">
@@ -37,7 +37,7 @@
                 
 
                 <button type="submit" type="submit" 
-                class="btn btn-primary mt-2">Guardar</button>
+                class="btn mt-2" style="background-color:#015c8e; color: white;" >Guardar</button>
                 
 
             </form>
@@ -67,8 +67,8 @@
                         <td>{{item.idEmpleadoModifica}}</td>
                         <td>{{item.fechaModificacion}}</td>
                         <td>  
-                            <a (click)="showModal1(item)" class="bi bi-trash btn btn-danger" style="margin-right: 1px;" ></a>                          
-                            <a  class="bi bi-pencil-square  btn btn-success" (click)="editar(item)"></a> 
+                            <a (click)="showModal1(item)" class="bi bi-trash btn text-white" style="margin-right: 1px; background-color: #ff5a19;" ></a>                          
+                            <a  class="bi bi-pencil-square  btn text-white" style="background-color:#015c8e" (click)="editar(item)"></a> 
 
                         </td>
                     </tr>
